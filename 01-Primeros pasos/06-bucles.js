@@ -72,3 +72,4 @@ for (const propertie in objectAlpha) {
     console.log(`${propertie}: ${objectAlpha[propertie]}`);
 }
 
+/** "for in" recorre las propiedades de un objeto */
