@@ -8,7 +8,8 @@ function sumado(num1, num2, sumaF, sumaFX2) {
     sumaFX2(suma);
 }
 
-sumado(
+//Uso de funcion anonima
+/* sumado(
     3,
     4,
     function (parametre) {
@@ -17,4 +18,12 @@ sumado(
     function (input) {
         console.log(input * 2);
     }
+); */
+
+//uso de funciones flecha
+sumado(
+    3,
+    5,
+    (numeroA) => console.log(numeroA),
+    (numeroB) => console.log(numeroB + 2)
 );
