@@ -44,7 +44,7 @@ console.log(saludoCapitalize);
 //=====================================================================
 
 let textSample =
-    "Bienvenidos a la programacion en javascript, aqui aprenderemos la belleza de pensar como un computador";
+    "Bienvenidos a la programacion en javascript, aqui aprenderemos la belleza de pensar como un computador con javascript";
 
 //Encuentra el primer caracter de la primera ocurrencia
 let buscarIndexInicio = textSample.indexOf("la");
@@ -85,3 +85,34 @@ console.log('Termina con "computador"? =>', endString);
 //includes([string]) Arroja un booleano afirmando o negando la ocurrencia dentro del string objetivo de un substring especificado
 let isInString = textSample.includes("belleza");
 console.log('Esta "belleza" en el string? =>', isInString);
+
+//replace([string], [string]) Reemplaza dentro de un string un substring por las ocurrencias del otro
+//solo la primera ocurrencia
+let textReplace = textSample.replace("javascript", "laravel");
+console.log(textReplace);
+//todas las ocurrencias
+let textReplace2 = textSample.replace(/javascript/gi, "laravel");
+console.log(textReplace2);
+
+//slice([number]) Devuelve el string recortado enpezando por el caracter indicado
+let textSlice = textSample.slice(24);
+console.log(textSlice);
+
+//split([character]) Devuelve un array con cadenas que anteriormente estaban separadas por un tipo de caracter
+let textSplit = textSample.split(" ");
+console.log(textSplit);
+
+//trim() Recorta los espacios al inicio y al final de un string
+let textSample2 = "   " + textSample + "   ";
+console.log("Con espacios =>", textSample2);
+
+let textTrim = textSample2.trim();
+console.log("Sin espacios =>", textTrim);
+
+//String templates
+let nombre = "Crhistian Alexander";
+let apellidos = "Garcia Urbano";
+document.write(`
+    <h4>Mi nombre es: ${nombre}</h4>
+    <h4>Mis apellidos son: ${apellidos}<h4>
+    <h6>Este es un h6 random para probar el string template<h6>`);
