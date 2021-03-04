@@ -15,7 +15,7 @@ let shrek = {
 };
 
 let filmSublibrary = [elPadrino, shrek];
-let filmLibrary = [...filmSublibrary]; //uso de spread
+let filmLibrary = [...filmSublibrary]; //uso de rest
 let filmsdiv = document.querySelector("#films");
 
 for (const index in filmLibrary) {

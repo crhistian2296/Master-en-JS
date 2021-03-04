@@ -17,16 +17,28 @@ formulario.addEventListener("submit", () => {
 
     console.group("Pelis");
     let itemPeli = "";
+    const fragment = document.createDocumentFragment();
     for (let index in localStorage) {
         itemPeli = localStorage[index];
         if (typeof itemPeli == "string") {
             console.log(localStorage.getItem(itemPeli));
 
+            /*FORMA 1
             let li = document.createElement("li");
 
             li.append(itemPeli);
             ul.append(li);
+            */
+            /*FORMA 2
+            ul.innerHTML += `<li>${itemPeli}</li>`;
+            */
+            //FORMA 3 (evita el reflow ) fragment
+            let li = document.createElement("li");
+            li.append(itemPeli);
+
+            fragment.append(li);
         }
+        ul.append(fragment);
     }
     console.groupEnd();
 });
@@ -48,10 +60,11 @@ formEraser.addEventListener("submit", () => {
     for (let index in localStorage) {
         itemPeli = localStorage[index];
         if (typeof itemPeli == "string") {
-            let li = document.createElement("li");
+            /* let li = document.createElement("li");
 
             li.append(itemPeli);
-            ul.append(li);
+            ul.append(li); */
+            ul.innerHTML += `<li>${itemPeli}</li>`;
         }
     }
 });
