@@ -32,6 +32,7 @@ function toCapitalize(text) {
 
             textCapitalized += wordCapitalized + " ";
         }
+        textCapitalized.trim()
 
         //Concatenar cadenas => .concat([string])
         return "Texto capitalize: ".concat(textCapitalized);
